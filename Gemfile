@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'ruby_slippers', '0.2.15'
+gem 'haml'
 
 group :test, :development do
   gem 'heroku'

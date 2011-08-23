@@ -12,6 +12,7 @@ GEM
     guard-test (0.3.0)
       guard (>= 0.2.2)
       test-unit (~> 2.2)
+    haml (3.1.2)
     heroku (2.3.3)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
@@ -71,6 +72,7 @@ DEPENDENCIES
   guard
   guard-bundler
   guard-test
+  haml
   heroku
   jeweler
   riot
