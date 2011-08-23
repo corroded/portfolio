@@ -3,3 +3,4 @@
 log/*.log
 public/img/archive/*
 slippers_lib
+*.swp
