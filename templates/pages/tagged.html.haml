@@ -1,0 +1,8 @@
+%h1
+  Posts tagged with: #{tagged}
+- unless articles.empty?
+  %ul
+    - for article in articles
+      %li.article
+        %a{:href => article.url}= article.title
+

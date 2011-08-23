@@ -1,0 +1,31 @@
+<!doctype html>
+%html
+  %head
+    %link{:href => "/css/main.css", :rel => "stylesheet", :type => "text/css"}
+      %link{:href => "/css/articles.css", :rel => "stylesheet", :type => "text/css"}
+        %link{:href => "/index.xml", :rel => "alternate", :title => "#{title} - atom feed", :type => "application/atom+xml"}/
+        %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+        %title= title
+  %body
+    %header
+      %h1
+        %a{:href => "/"}= @config[:title]
+      %h3
+        a blog by #{@config[:author]}
+    %menu
+      %ul
+        %li
+          %a{:href => "/"} home
+        %li
+          %a{:href => "/index.xml"} feed
+        %li
+          %a{:href => "/archives"} archives
+        %li
+          %a{:href => "/about"} about
+    %section#content
+      = yield
+    %footer
+      powered by
+      %a{:href => "http://github.com/dreamr/ruby_slippers"} ruby-slippers
+    %script{:src => "/js/tracking.js"}
+

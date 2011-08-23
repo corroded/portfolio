@@ -1,0 +1,24 @@
+%section#articles
+  - for article in articles[0...3]
+    %article.article
+      %header
+        %h1
+          %a{:href => article.path}= article.title
+        %span.date= article.date
+      - if article.image_src
+        %figure
+          %img.thumbnail.alignleft{:alt => "Post thumbnail", :src => article.image_src || '/img/missing_thumb.png'}/
+      %section.content
+        = article.summary
+      %footer
+        - if article.has_more_then_summary?
+          .more-link
+            %a{:href => article.path} read on »
+        %span.meta
+          %div
+            %p.tags
+              - unless article.tag_links.blank?
+                in #{article.tag_links}
+            %p
+              Posted by #{article.author} on #{article.date}
+

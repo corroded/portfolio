@@ -1,20 +1,22 @@
+require 'haml'
+
 module Config
   #
   # Create and configure a ruby-slippers instance
   #
   $app = RubySlippers::Engine::App.new do
-    # log_file = File.expand_path("../log/slippers.log", __FILE__)
-    # log = File.new(log_file, "a+")
-    # $stdout.reopen(log)
-    # $stderr.reopen(log)
+     log_file = File.expand_path("../log/slippers.log", __FILE__)
+     log = File.new(log_file, "a+")
+     $stdout.reopen(log)
+     $stderr.reopen(log)
 
     #
     # Add your settings here
     # set [:setting], [value]
-    # 
-    set :author,      "Dreamr"                              # blog author
-    set :title,       "RubySlippers, the smartest blog engine in all of Oz!"  # site title
-    # set :root,      "index"                                   # page to load on /
+    #
+    set :author,      "eumir"                              # blog author
+    set :title,       "Sef and Eumir"                     # site title
+    set :root,        "index"                                   # page to load on /
     set :date,        lambda {|now| now.strftime("%Y/%m/%d") }    # date format for articles
     # set :markdown,  :smart                                    # use markdown + smart-mode
     # set :disqus,    false                                     # disqus id, or false
@@ -28,11 +30,12 @@ module Config
 
     # to use haml, add the gem to your Gemfile and bundle, then uncomment this
     # and redo your templates using haml
-    # set :to_html, lambda { |path, page, binding| 
-    #   Haml::Engine.new(File.read("#{path}/#{page}.haml"),
-    #   :attr_wrapper => '"',
-    #   :filename => path ).render(binding)
-    # }
+    set :to_html, lambda { |path, page, binding|
+      ::Haml::Engine.new(File.read("#{path}/#{page}.html.haml"),
+      :attr_wrapper => '"',
+      :filename => path ).render(binding)
+    }
   end
-  
+
 end
+
