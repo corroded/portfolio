@@ -5,10 +5,10 @@ module Config
   # Create and configure a ruby-slippers instance
   #
   $app = RubySlippers::Engine::App.new do
-     log_file = File.expand_path("../log/slippers.log", __FILE__)
-     log = File.new(log_file, "a+")
-     $stdout.reopen(log)
-     $stderr.reopen(log)
+    #log_file = File.expand_path("../log/slippers.log", __FILE__)
+    #log = File.new(log_file, "a+")
+    #$stdout.reopen(log)
+    #$stderr.reopen(log)
 
     #
     # Add your settings here
