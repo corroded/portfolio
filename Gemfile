@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'ruby_slippers', '0.2.15'
 gem 'haml'
+gem 'compass'
 
 group :test, :development do
   gem 'heroku'
