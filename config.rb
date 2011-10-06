@@ -15,18 +15,18 @@ module Config
     # set [:setting], [value]
     #
     set :author,      "eumir"                              # blog author
-    set :title,       "Sef and Eumir"                     # site title
+    set :title,       "deadcanvas"                        # site title
     set :root,        "index"                                   # page to load on /
     set :date,        lambda {|now| now.strftime("%Y/%m/%d") }    # date format for articles
     # set :markdown,  :smart                                    # use markdown + smart-mode
-    # set :disqus,    false                                     # disqus id, or false
+    set :disqus,      "deadcanvas"                                     # disqus id, or false
     set :summary,     :max => 300, :delim => /~/                # length of article summary and delimiter
-    set :ext,       'md'                                     # file extension for articles
+    set :ext,         'md'                                     # file extension for articles
     # set :cache,      28800                                    # cache duration, in seconds
     set :tag_separator, ', '                                    # tag separator for articles
     set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
     # set this to your local port. I use shotgun, so 9393.
-    set :url, "http://localhost:9393" if ENV['RACK_ENV'] == 'development'
+    set :url, "http://localhost:3000" if ENV['RACK_ENV'] == 'development'
 
     # to use haml, add the gem to your Gemfile and bundle, then uncomment this
     # and redo your templates using haml

@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'ruby_slippers', '0.2.15'
 gem 'haml'
 gem 'compass'
+gem 'compass-bootstrap'
 
 group :test, :development do
   gem 'heroku'
