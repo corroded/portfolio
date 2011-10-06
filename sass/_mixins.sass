@@ -1,0 +1,52 @@
+@mixin avatar-dimensions-medium
+  width: 100px
+  height: 100px
+
+@mixin inner-shadow($col1: #fff, $col2: #444)
+  +text-shadow(1px 1px $col1, -1px -1px $col2)
+
+@mixin fadein-hover($color: $accent)
+  +transition(color 550ms ease-in-out)
+
+  &:hover
+    color: $color
+
+$main-color: #b0dfe5
+$alt-color: #fff3cb
+$accent: #998D65
+
+// Grays
+$black:             #000
+$grayDark:          lighten($black, 25%)
+$gray:              lighten($black, 50%)
+$grayLight:         lighten($black, 75%)
+$grayLighter:       lighten($black, 90%)
+$white:             #fff
+
+// Baseline grid
+$basefont:          14px
+$baseline:          20px
+
+// Font Stacks
+@mixin shorthand($weight: normal, $size: 14px, $lineHeight: 20px)
+  font-size: $size
+  font-weight: $weight
+  line-height: $lineHeight
+
+@mixin sans-serif($weight: normal, $size: 14px, $lineHeight: 20px)
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size: $size
+  font-weight: $weight
+  line-height: $lineHeight
+
+@mixin serif($weight: normal, $size: 14px, $lineHeight: 20px)
+  font-family: "Alice", "Georgia", Times, serif
+  font-size: $size
+  font-weight: $weight
+  line-height: $lineHeight
+
+@mixin monospace($weight: normal, $size: 12px, $lineHeight: 20px)
+  font-family: "Monaco", Courier New, monospace
+  font-size: $size
+  font-weight: $weight
+  line-height: $lineHeight
